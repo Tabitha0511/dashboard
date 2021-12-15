@@ -1,0 +1,92 @@
+<div class="justify-start flex-wrap my-6">
+  <div class="flex">
+    <p class="text-cyan-500 text-lg text-center my-8 px-4">
+      {{ title }}
+    </p>
+    <div
+      *ngFor="let text of data_1"
+      class="
+        w-40
+        cursor-pointer
+        flex-wrap
+        m-2
+        p-2
+        text-sm
+        font-medium
+        bg-gray-200
+        rounded-lg
+        outline-none
+        focus:outline-none
+      "
+    >
+      <button (click)="selectedText_1(text)">
+        <p class="text-md font-normal mx-2"><b>ID:</b> {{ text.id }}</p>
+        <p class="text-md font-normal mx-2"><b>Text:</b> {{ text.text }}</p>
+        <p class="text-md font-normal mx-2"><b>Type:</b> {{ text.type }}</p>
+      </button>
+    </div>
+  </div>
+  <div class="mx-4 px-4 mt-8">
+    <p class="text-cyan-600 font-semibold">{{ toDisplay_1.text }}</p>
+  </div>
+  <div class="flex my-4 mx-6 flex-wrap">
+    <div
+      *ngFor="let text of data_2"
+      class="
+        w-40
+        flex
+        m-2
+        p-2
+        text-sm
+        font-medium
+        bg-gray-200
+        rounded-lg
+        outline-none
+        focus:outline-none
+      "
+    >
+      <button (click)="selectedText_2(text)">
+        <p class="text-md font-normal mx-2 my-2"><b>ID:</b> {{ text.id }}</p>
+        <p class="text-md font-normal mx-2 my-2">
+          <b>Text:</b> {{ text.text }}
+        </p>
+        <p class="text-md font-normal mx-2 my-2">
+          <b>Type:</b> {{ text.type }}
+        </p>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex my-4 mx-6 flex-wrap">
+    <div class="mx-4 mt-8">
+      <p class="text-cyan-600 font-semibold">{{ toDisplay_2.text }}</p>
+    </div>
+    <div class="flex my-4 mx-6 flex-wrap">
+      <div
+        *ngFor="let text of data_3"
+        class="
+          w-40
+          flex
+          m-2
+          p-2
+          text-sm
+          font-medium
+          bg-gray-200
+          rounded-lg
+          outline-none
+          focus:outline-none
+        "
+      >
+        <button>
+          <p class="text-md font-normal mx-2 my-2"><b>ID:</b> {{ text.id }}</p>
+          <p class="text-md font-normal mx-2 my-2">
+            <b>Text:</b> {{ text.text }}
+          </p>
+          <p class="text-md font-normal mx-2 my-2">
+            <b>Type:</b> {{ text.type }}
+          </p>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

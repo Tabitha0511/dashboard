@@ -1,0 +1,22 @@
+<div class="justify-center border-2 rounded-full border-gray-300 w-60">
+  <p class="text-xl text-cyan-800 text-center">Sweden population</p>
+</div>
+<div class="w-full flex h-2/5">
+  <ngx-charts-pie-grid [results]="populationBar"> </ngx-charts-pie-grid>
+</div>
+<div class="w-full m-16 justify-between">
+  <ngx-charts-bar-vertical
+    [view]="[1000, 400]"
+    [results]="populationBar"
+    [xAxisLabel]="'Year'"
+    [legendTitle]="'Population chart'"
+    [yAxisLabel]="'Total Population'"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true"
+  >
+  </ngx-charts-bar-vertical>
+</div>

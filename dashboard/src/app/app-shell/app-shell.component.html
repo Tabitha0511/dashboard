@@ -1,0 +1,125 @@
+<div class="w-screen scroll overflow:hidden h-screen md:flex fixed">
+  <!-- SIDEBAR -->
+  <div
+    class="
+      sidebar
+      rounded-md
+      bg-white
+      text-black
+      w-56
+      space-y-6
+      py-7
+      px-2
+      absolute
+      inset-y-0
+      left-0
+      transform
+      -translate-x-full
+      md:relative md:translate-x-0
+      transition
+      duration-200
+      ease-in-out
+    "
+  >
+    <!-- logo -->
+    <div class="items-center space-x-2 px-4">
+      <a href="#" class="items-center">
+        <img src="../../assets/197564.png" class="w-24 mx-auto" />
+        <p class="text-2xl font-extrabold text-gray-500 text-center my-3">
+          Sweden
+        </p>
+      </a>
+    </div>
+    <!-- nav -->
+    <div class="mt-4 rounded-md">
+      <nav
+        class="
+          my-3
+          flex
+          justify-center
+          hover:text-white hover:bg-cyan-500 hover:rounded-full
+        "
+        [ngClass]="
+          dashboard === true ? 'bg-cyan-500 text-white rounded-full' : ''
+        "
+      >
+        <img src="../../assets/dashboard.svg" class="w-7 hover:fill-cyan-600" />
+        <button
+          (click)="showDashboard()"
+          class="
+            text-center
+            my-2
+            block
+            py-2.5
+            font-semibold
+            px-4
+            transition
+            duration-200
+            text-md
+            cursor-pointer
+          "
+        >
+          DASHBOARD
+        </button>
+      </nav>
+      <nav
+        class="
+          my-3
+          flex
+          justify-center
+          hover:text-white hover:bg-cyan-500 hover:rounded-full
+        "
+        [ngClass]="
+          analytics === true ? 'bg-cyan-500 text-white rounded-full' : ''
+        "
+      >
+        <img src="../../assets/analytics.svg" class="w-7 hover:fill-cyan-600" />
+        <button
+          (click)="showAnalytics()"
+          class="
+            text-center
+            my-2
+            block
+            py-2.5
+            font-semibold
+            px-4
+            transition
+            duration-200
+            text-md
+            cursor-pointer
+          "
+        >
+          ANALYTICS
+        </button>
+      </nav>
+
+      <div class="absolute bottom-0 flex text-center px-8 mx-auto my-8">
+        <img src="../../assets/settings.svg" class="w-7" />
+        <p
+          class="
+            font-semibold
+            transition
+            duration-200
+            text-md
+            px-4
+            text-cyan-600
+          "
+        >
+          Settings
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- content -->
+  <ng-container *ngIf="analytics === true">
+    <div class="flex-1 p-5 text-2xl font-bold bg-gray-100 overflow-scroll">
+      <app-analytics></app-analytics>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="dashboard === true">
+    <div class="flex-1 p-5 text-2xl font-bold bg-gray-100 overflow-scroll">
+      <app-dashboard></app-dashboard>
+    </div>
+  </ng-container>
+</div>

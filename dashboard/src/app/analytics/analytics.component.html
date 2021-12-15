@@ -1,0 +1,54 @@
+<ng-container *ngIf="text === false; else population">
+  <section class="text-gray-700 body-font overflow-scroll">
+    <div class="container px-5 mx-auto">
+      <div class="flex justify-between my-2">
+        <div
+          class="
+            w-80
+            border-2 border-black
+            h-10
+            rounded-full
+            my-4
+            flex
+            justify-between
+          "
+        >
+          <input
+            type="text"
+            placeholder="Search"
+            class="h-6 py-1 px-2 w-60 ml-3 mt-2 bg-gray-100"
+          />
+          <img src="../../assets/search.svg" class="w-5 mx-4" />
+        </div>
+        <img src="../../assets/menu.svg" class="w-5 mx-6" />
+      </div>
+
+      <div class="flex flex-wrap -m-4 text-center">
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full" *ngFor="let text of content">
+          <div
+            (click)="selectStatistics(text.id)"
+            class="
+              border-2 border-cyan-600
+              px-4
+              py-6
+              rounded-lg
+              transform
+              transition
+              duration-500
+              hover:scale-110
+            "
+          >
+            <img [src]="text.icon" class="w-12 h-12 mb-3 inline-block" />
+            <h2 class="title-font font-medium text-3xl text-gray-600">
+              ID: {{ text.id }}
+            </h2>
+            <p class="my-1 text-cyan-800 break-words">{{ text.text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-container>
+<ng-template #population>
+  <app-population [title]="title"></app-population>
+</ng-template>
