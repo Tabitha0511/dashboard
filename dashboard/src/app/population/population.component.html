@@ -7,8 +7,7 @@
       *ngFor="let text of data_1"
       class="
         w-40
-        cursor-pointer
-        flex-wrap
+        flex
         m-2
         p-2
         text-sm
@@ -17,6 +16,11 @@
         rounded-lg
         outline-none
         focus:outline-none
+        transition
+        ease-in-out
+        delay-150
+        hover:-translate-y-1 hover:scale-110 hover:bg-gray-300
+        duration-300
       "
     >
       <button (click)="selectedText_1(text)">
@@ -43,6 +47,11 @@
         rounded-lg
         outline-none
         focus:outline-none
+        transition
+        ease-in-out
+        delay-150
+        hover:-translate-y-1 hover:scale-110 hover:bg-gray-300
+        duration-300
       "
     >
       <button (click)="selectedText_2(text)">
@@ -75,6 +84,11 @@
           rounded-lg
           outline-none
           focus:outline-none
+          transition
+          ease-in-out
+          delay-150
+          hover:-translate-y-1 hover:scale-110 hover:bg-gray-300
+          duration-300
         "
       >
         <button>
